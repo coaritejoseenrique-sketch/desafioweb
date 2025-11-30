@@ -1,0 +1,125 @@
+:root {
+    --primary-color: #4F46E5;
+    --error-color: #EF4444;
+    --success-color: #10B981;
+    --bg-color: #F3F4F6;
+    --text-color: #1F2937;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+input.invalid {
+    border-color: var(--error-color);
+}
+input.valid {
+    border-color: var(--success-color);
+}
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+}
+button:hover {
+    background-color: #4338ca;
+}
+button.secondary {
+    background-color: #9CA3AF;
+    margin-top: 0.5rem;
+}
+button.secondary:hover {
+    background-color: #6B7280;
+}
+.show-pass-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+.show-pass-wrapper input {
+    margin-right: 0.5rem;
+}
+.message-box {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: none;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.message-error {
+    background-color: #FEE2E2;
+    color: #B91C1C;
+    border: 1px solid #F87171;
+}
+.message-success {
+    background-color: #D1FAE5;
+    color: #047857;
+    border: 1px solid #34D399;
+}
+.hidden {
+    display: none;
+}
+.link-text {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+.link-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+.link-text a:hover {
+    text-decoration: underline;
+}

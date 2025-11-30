@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío: Sistema de Autenticación Seguro</title>
+    <link rel="stylesheet" href="css\estilos.css">
+</head>
+<body>
+    <div class="container">
+        <div id="system-message" class="message-box"></div>
+        <div id="view-register">
+            <h2>Crear Cuenta</h2>
+            <form id="form-register">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="reg-name" placeholder="Ej: Juan Manuel" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo (Usuario)</label>
+                    <input type="email" id="reg-email" placeholder="usuario@ejemplo.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Celular</label>
+                    <input type="tel" id="reg-mobile" placeholder="Ej: 77712345" required>
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="reg-pass" placeholder="Mínimo 6 caracteres, Mayús, núm, símbolo" required>
+                    <div class="show-pass-wrapper">
+                        <input type="checkbox" onclick="togglePassword('reg-pass')"> Mostrar contraseña
+                    </div>
+                </div>
+                <button type="submit">Registrarse</button>
+            </form>
+            <div class="link-text">
+                ¿Ya tienes cuenta? <a onclick="switchView('login')">Inicia sesión aquí</a>
+            </div>
+        </div>
+
+        <!-- VISTA: LOGIN -->
+        <div id="view-login" class="hidden">
+            <h2>Iniciar Sesión</h2>
+            <form id="form-login">
+                <div class="form-group">
+                    <label>Usuario (Correo)</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="login-pass" required>
+                    <div class="show-pass-wrapper">
+                        <input type="checkbox" onclick="togglePassword('login-pass')"> Mostrar contraseña
+                    </div>
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            <!-- CAMBIO: Quitamos la clase 'hidden' para que siempre se vea -->
+            <div id="forgot-pass-link" class="link-text">
+                <a onclick="switchView('recovery')" style="color: #666;">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="link-text">
+                ¿No tienes cuenta? <a onclick="switchView('register')">Regístrate aquí</a>
+            </div>
+        </div>
+        <div id="view-recovery" class="hidden">
+            <h2>Recuperar Contraseña</h2>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+                Ingrese su correo para validar su identidad y establecer una nueva contraseña.
+            </p>
+            <form id="form-recovery">
+                <div class="form-group">
+                    <label>Correo registrado</label>
+                    <input type="email" id="rec-email" required>
+                </div>
+                <div class="form-group">
+                    <label>Nueva Contraseña</label>
+                    <input type="password" id="rec-pass" required>
+                    <div class="show-pass-wrapper">
+                        <input type="checkbox" onclick="togglePassword('rec-pass')"> Mostrar contraseña
+                    </div>
+                </div>
+                <button type="submit">Actualizar Contraseña</button>
+                <button type="button" class="secondary" onclick="switchView('login')">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js\main.js"></script>
+</body>
+</html>
